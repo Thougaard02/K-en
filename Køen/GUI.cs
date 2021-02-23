@@ -13,7 +13,7 @@ namespace Køen
 
         public void MainMenu()
         {
-            logik.Guest();
+            Console.Clear();
             Console.WriteLine("==================================================");
             Console.WriteLine();
             Console.WriteLine("             H1 Queue Operations Menu             ");
@@ -32,49 +32,54 @@ namespace Køen
 
         public void QueueOption()
         {
-            int userInput = Convert.ToInt32(Console.ReadLine());
-
-            switch (userInput)
+            logik.Guest();
+            while (true)
             {
-                case 1:
-                    Console.Clear();
-                    Console.WriteLine("Insert name of your guest");
-                    guest.Name = Console.ReadLine();
+                MainMenu();
+                int userInput = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine("Insert age of your guest");
-                    guest.Age = Convert.ToInt32(Console.ReadLine());
+                switch (userInput)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("Insert name of your guest");
+                        guest.Name = Console.ReadLine();
 
-                    logik.AddGuests(guest.Name, guest.Age);
-                    Console.WriteLine($"Added to guest list {guest.Name} {guest.Age}");
-                    Console.ReadKey();
-                    break;
-                case 2:
-                    Console.Clear();
-                    Console.WriteLine(logik.DeleteGuests());
-                    Console.ReadKey();
-                    break;
-                case 3:
-                    Console.Clear();
-                    Console.WriteLine(logik.NumberOfGuests());
-                    Console.ReadKey();
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    Console.Clear();
-                    Console.WriteLine(logik.findGuest());
-                    Console.ReadKey();
-                    break;
-                case 6:
-                    Console.Clear();
-                    Console.WriteLine(logik.PrintGuestList());
-                    Console.ReadKey();
-                    break;
-                case 7:
-                    Environment.Exit(1);
-                    break;
-                default:
-                    break;
+                        Console.WriteLine("Insert age of your guest");
+                        guest.Age = Convert.ToInt32(Console.ReadLine());
+
+                        logik.AddGuests(guest.Name, guest.Age);
+                        Console.WriteLine($"Added to guest list {guest.Name} {guest.Age}");
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine(logik.DeleteGuests());
+                        Console.ReadKey();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine(logik.NumberOfGuests());
+                        Console.ReadKey();
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        Console.Clear();
+                        Console.WriteLine(logik.findGuest());
+                        Console.ReadKey();
+                        break;
+                    case 6:
+                        Console.Clear();
+                        Console.WriteLine(logik.PrintGuestList());
+                        Console.ReadKey();
+                        break;
+                    case 7:
+                        Environment.Exit(1);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 

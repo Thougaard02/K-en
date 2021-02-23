@@ -22,7 +22,6 @@ namespace Køen
         #region Add Item
         public void AddGuests(string name, int age)
         {
-
             guests.Enqueue(new Guest() { Age = age, Name = name });
         }
         #endregion

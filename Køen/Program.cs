@@ -11,7 +11,6 @@ namespace Køen
         static void Main(string[] args)
         {
             GUI queue = new GUI();
-            queue.MainMenu();
             queue.QueueOption();
         }
     }
